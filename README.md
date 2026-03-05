@@ -19,3 +19,5 @@ adding another URLconfig
 
 # Adding new folder called __templates__ in playground
 Adding __templates__ in playground and inside templates creatting __hello.html__
+
+in __views.py__ of playground changing return value of say_hello function to respond with html file as a responce
