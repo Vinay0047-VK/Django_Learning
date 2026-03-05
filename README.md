@@ -8,3 +8,14 @@ created a view in __views.py__ of playground
 say_hello
 
 created a new file __urls.py__ in playground
+
+importing path from django.urls
+and importing views from current folder
+
+Creating urlpatterns with path function
+
+# Changes in urls.py of backend_django
+adding another URLconfig
+
+# Adding new folder called __templates__ in playground
+Adding __templates__ in playground and inside templates creatting __hello.html__
