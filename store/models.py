@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+class Promotion(models.Model):
+    description = models.CharField(max_length=255)
+    discount = models.FloatField()
+
+class Collection(models.Model):
+    title = models.CharField(max_length=255)
+    featured_product = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True, related_name='+')
+
 # Class named Product with fields: title, description, price, inventory, last_update
 class Product(models.Model):
     title = models.CharField(max_length=255)
@@ -10,6 +18,8 @@ class Product(models.Model):
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
     # stock = models.IntegerField()
+    collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
+    promotions = models.ManyToManyField(Promotion)
 
 # Class named Customer with fields: first_name, last_name, email, phone, birth_date
 class Customer(models.Model):
@@ -31,7 +41,7 @@ class Customer(models.Model):
     birth_date = models.DateField(null=True)
     membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, default=MEMBERSHIP_BRONZE)
 
-class Order(models.Models):
+class Order(models.Model):
     PAYMETN_STATUS_PENDING = 'P'
     PAYMETN_STATUS_COMPLETE = 'C'
     PAYMETN_STATUS_FAILED = 'F'
@@ -43,3 +53,23 @@ class Order(models.Models):
 
     placed_at = models.DateTimeField(auto_now_add=True)
     payment_status = models.CharField(max_length=1, choices=PAYMETN_STATUS_CHOICES, default=PAYMETN_STATUS_PENDING)
+    customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, on_delete=models.PROTECT)
+    quantity = models.PositiveIntegerField()
+    unit_price = models.DecimalField(max_digits=10, decimal_places=2)
+
+class Address(models.Model):
+    street = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+class Cart(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()

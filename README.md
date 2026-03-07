@@ -63,14 +63,14 @@ Listing __store__ and __tags__ in INSTALLED_APPS __settings.py__ of __backend_dj
 
 # Creating classes in models.py of store app
 creating classes like:
-Product
+__Product__
     title
     description
     price
     inventory
     last_update
 
-Customer
+__Customer__
     first_name
     last_name
     email
@@ -82,10 +82,54 @@ __Creating a variable for three membership choice__
 adding additional functionality to Customer class with membership types
 with bronze, silver, gold
 
-class Order(models.Models):
+__Order__
     PAYMETN_STATUS_PENDING
     PAYMETN_STATUS_COMPLETE
     PAYMETN_STATUS_FAILED
     PAYMETN_STATUS_CHOICES
     placed_at
     payment_status 
+
+__Address__
+    street 
+    city 
+    customer 
+
+creating a class before __Product__ named __Collection__
+__Collection__
+    title
+adding another field in in __Product__
+    collection
+and adding ForeignKey with Customer
+
+adding another field in in __Order__
+    customer
+and adding ForeignKey with Customer
+
+__OrderItem__
+    order 
+    product
+    quantity 
+    unit_price 
+
+__Cart__
+    created_at 
+
+__CartItem__
+    cart 
+    product 
+    quantity 
+
+__Promotion__
+    description 
+    discount 
+
+adding another field in in __Product__
+    promotions
+creating a many to many relationship with __Promotion__
+
+adding another field in in __Collection__
+    featured_product
+we need to eliminate the circular dependecy between __Product__ and __Collection__. We do necessary changes
+
+# Creating classes in models.py of tags app
