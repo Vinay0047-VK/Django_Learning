@@ -52,3 +52,14 @@ in __settings.py__
 # In backend_django
 urls.py import debug_toolbar and add url patterns 
 > path('__debug__/', include(debug_toolbar.urls))
+
+# Adding new apps 
+APPS 
+__store__ with > python manage.py startapp store
+__tags__ with > python manage.py startapp tags
+
+# Listing apps in INSTALLED_APPS
+Listing __store__ and __tags__ in INSTALLED_APPS __settings.py__ of __backend_django__
+
+# Creating classes in models.py of store app
+creating classes like:
