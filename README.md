@@ -63,3 +63,29 @@ Listing __store__ and __tags__ in INSTALLED_APPS __settings.py__ of __backend_dj
 
 # Creating classes in models.py of store app
 creating classes like:
+Product
+    title
+    description
+    price
+    inventory
+    last_update
+
+Customer
+    first_name
+    last_name
+    email
+    phone
+    birth_date
+    membership
+
+__Creating a variable for three membership choice__
+adding additional functionality to Customer class with membership types
+with bronze, silver, gold
+
+class Order(models.Models):
+    PAYMETN_STATUS_PENDING
+    PAYMETN_STATUS_COMPLETE
+    PAYMETN_STATUS_FAILED
+    PAYMETN_STATUS_CHOICES
+    placed_at
+    payment_status 
