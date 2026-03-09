@@ -152,3 +152,8 @@ __Migrations in django__
 
 In __store__ > __models.py__
 in Product class changed price to unit price
+
+in __backend__ > __setting.py__
+changes in __DATABASES__
+engine to mysql
+name to backend_django
