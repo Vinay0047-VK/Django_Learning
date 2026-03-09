@@ -133,3 +133,11 @@ adding another field in in __Collection__
 we need to eliminate the circular dependecy between __Product__ and __Collection__. We do necessary changes
 
 # Creating classes in models.py of tags app
+ __Tag__
+    label 
+
+__TaggedItem__
+    tag 
+    content_type  
+    object_id 
+    content_object 
