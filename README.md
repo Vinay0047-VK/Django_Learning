@@ -141,3 +141,14 @@ __TaggedItem__
     content_type  
     object_id 
     content_object 
+
+# Adding new app
+APP
+__likes__ with > python manage.py startapp likes
+
+__Migrations in django__
+>python manage.py makemigrations
+
+
+In __store__ > __models.py__
+in Product class changed price to unit price
