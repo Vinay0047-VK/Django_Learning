@@ -157,3 +157,13 @@ in __backend__ > __setting.py__
 changes in __DATABASES__
 engine to mysql
 name to backend_django
+
+# django ORM
+migrating to create tables in database __backend_django__
+
+query retrieval in web django debugger tool
+
+# exception handling
+execption handling in django
+
+filtering objects
