@@ -167,3 +167,7 @@ query retrieval in web django debugger tool
 execption handling in django
 
 filtering objects
+
+for loop in __hello.html__
+to list the product title in unordered list
+
