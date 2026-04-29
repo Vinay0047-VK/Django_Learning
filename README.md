@@ -64,83 +64,83 @@ Listing __store__ and __tags__ in INSTALLED_APPS __settings.py__ of __backend_dj
 # Creating classes in models.py of store app
 creating classes like:
 __Product__
-    title
-    description
-    price
-    inventory
-    last_update
+    -title
+    -description
+    -price
+    -inventory
+    -last_update
 
 __Customer__
-    first_name
-    last_name
-    email
-    phone
-    birth_date
-    membership
+    -first_name
+    -last_name
+    -email
+    -phone
+    -birth_date
+    -membership
 
 __Creating a variable for three membership choice__
 adding additional functionality to Customer class with membership types
 with bronze, silver, gold
 
 __Order__
-    PAYMETN_STATUS_PENDING
-    PAYMETN_STATUS_COMPLETE
-    PAYMETN_STATUS_FAILED
-    PAYMETN_STATUS_CHOICES
-    placed_at
-    payment_status 
+    -PAYMETN_STATUS_PENDING
+    -PAYMETN_STATUS_COMPLETE
+    -PAYMETN_STATUS_FAILED
+    -PAYMETN_STATUS_CHOICES
+    -placed_at
+    -payment_status 
 
 __Address__
-    street 
-    city 
-    customer 
+    -street 
+    -city 
+    -customer 
 
 creating a class before __Product__ named __Collection__
 __Collection__
-    title
+    -title
 adding another field in in __Product__
-    collection
+    -collection
 and adding ForeignKey with Customer
 
 adding another field in in __Order__
-    customer
+    -customer
 and adding ForeignKey with Customer
 
 __OrderItem__
-    order 
-    product
-    quantity 
-    unit_price 
+    -order 
+    -product
+    -quantity 
+    -unit_price 
 
 __Cart__
-    created_at 
+    -created_at 
 
 __CartItem__
-    cart 
-    product 
-    quantity 
+    -cart 
+    -product 
+    -quantity 
 
 __Promotion__
-    description 
-    discount 
+    -description 
+    -discount 
 
 adding another field in in __Product__
-    promotions
+    -promotions
 creating a many to many relationship with __Promotion__
 
 adding another field in in __Collection__
-    featured_product
+    -featured_product
 we need to eliminate the circular dependecy between __Product__ and __Collection__. We do necessary changes
 
 # Creating classes in models.py of tags app
  __Tag__
-    label 
+    -label 
 
 __TaggedItem__
-    tag 
-    content_type  
-    object_id 
-    content_object 
+    -tag 
+    -content_type  
+    -object_id 
+    -content_object 
 
 # Adding new app
 APP
